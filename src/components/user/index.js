@@ -11,7 +11,7 @@ export default class Com extends React.Component {
       <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
         <Text>这里是用户中心页面</Text>
         <Button
-          title='点击跳转详情页面'
+          title='这里是用户中心页面'
           onPress={() => this.props.navigation.navigate('Details')}
         ></Button>
       </View>
