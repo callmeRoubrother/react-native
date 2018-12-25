@@ -9,7 +9,7 @@ const { width, height } = Dimensions.get('window');
 class Com extends React.Component {
   static navigationOptions = {
     title: '首页'
-  }
+  };
   constructor (props) {
     super(props);
     this.state = {
@@ -90,6 +90,9 @@ class Com extends React.Component {
     })
   }
   reFresh () {
+    this.setState({
+      girlsList: [],
+    });
     this.fetchListData();
   }
   backTop () {
@@ -101,7 +104,7 @@ class Com extends React.Component {
     })
   }
   render () {
-    if (this.state.bannerList.length > 0 && this.state.girlsList.length > 0) {
+    if (this.state.bannerList.length > 0) {
       return (
         <View style={styles.container}>
           <View style={styles.banner_Container}>
@@ -126,7 +129,7 @@ class Com extends React.Component {
                     underlayColor='gray'
                     onHideUnderlay={this.hideUnder}
                     onShowUnderlay={this.showUnder}
-                    style={{ width: width, height: 120 }}
+                    style={{ width: width, height: 120, backgroundColor: 'white' }}
                   >
                     <View style={styles.list_cover}>
                       <Image source={{ uri: item.avatarUrl }} style={{ height: 100, width: 200 }}></Image>

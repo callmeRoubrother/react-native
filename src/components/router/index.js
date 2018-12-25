@@ -2,33 +2,12 @@ import React from 'react';
 import { createBottomTabNavigator } from 'react-navigation'; // Version can be specified in package.json
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import {
-  StyleSheet,
   Dimensions,
-  Platform
 } from 'react-native';
 import HomeScreen from '../home';
-import KindScreen from '../kind';
+import SearchScreen from '../search';
 import CartScreen from '../cart';
 import UserScreen from '../user';
-import DetailsScreen from '../detail';
-
-// export default createBottomTabNavigator({
-//   '首页': {
-//     screen: HomeScreen,
-//     navigationOptions: {
-//
-//     }
-//   },
-//   '分类': {
-//     screen: KindScreen,
-//   },
-//   '购物车': {
-//     screen: CartScreen,
-//   },
-//   '我的': {
-//     screen: UserScreen,
-//   },
-// });
 
 export default  Tab = createBottomTabNavigator({
   Home: {
@@ -47,10 +26,10 @@ export default  Tab = createBottomTabNavigator({
     }
   },
   Kind: {
-    screen: KindScreen,
+    screen: SearchScreen,
     navigationOptions: {
       tabBarPosition: 'bottom',
-      tabBarLabel: '分类',
+      tabBarLabel: '搜索',
       tabBarIcon: ({tintColor, focused}) => (
         <Ionicons
           name={focused ? 'ios-keypad' : 'ios-keypad-outline'}
